@@ -1,9 +1,6 @@
-
 import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
-
 const Education = () => {
-  return (
-    <section id="education" className="section-padding">
+  return <section id="education" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold theme-text mb-6">
@@ -55,7 +52,7 @@ const Education = () => {
                       </div>
                       <div className="flex items-center gap-2 text-portfolio-success">
                         <Award className="w-4 h-4" />
-                        <span className="font-medium">Currently Pursuing</span>
+                        <span className="font-medium">2025 passed out</span>
                       </div>
                     </div>
                   </div>
@@ -126,8 +123,6 @@ const Education = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Education;

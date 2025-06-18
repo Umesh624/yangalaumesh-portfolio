@@ -1,35 +1,40 @@
-
 import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from './ThemeToggle';
-
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-portfolio-accent/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-portfolio-secondary/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-portfolio-secondary/20 rounded-full blur-3xl animate-pulse-slow" style={{
+        animationDelay: '1s'
+      }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-portfolio-success/10 rounded-full blur-3xl animate-float"></div>
         
         {/* Floating particles */}
         <div className="absolute top-20 left-20 w-2 h-2 bg-portfolio-accent rounded-full animate-bounce-gentle opacity-60"></div>
-        <div className="absolute top-40 right-32 w-3 h-3 bg-portfolio-secondary rounded-full animate-bounce-gentle opacity-40" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-32 left-32 w-2 h-2 bg-portfolio-success rounded-full animate-bounce-gentle opacity-50" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-40 right-32 w-3 h-3 bg-portfolio-secondary rounded-full animate-bounce-gentle opacity-40" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute bottom-32 left-32 w-2 h-2 bg-portfolio-success rounded-full animate-bounce-gentle opacity-50" style={{
+        animationDelay: '3s'
+      }}></div>
       </div>
 
       {/* Theme Toggle - Fixed Position */}
@@ -63,9 +68,15 @@ const Hero = () => {
                 
                 {/* Animated subtitle */}
                 <div className="text-2xl lg:text-3xl font-semibold theme-text-muted">
-                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.2s' }}>Frontend</span>
-                  <span className="inline-block animate-fade-in mx-2 text-portfolio-accent" style={{ animationDelay: '0.4s' }}>Developer</span>
-                  <span className="inline-block animate-fade-in" style={{ animationDelay: '0.6s' }}>& UI Designer</span>
+                  <span className="inline-block animate-fade-in" style={{
+                  animationDelay: '0.2s'
+                }}>Web</span>
+                  <span className="inline-block animate-fade-in mx-2 text-portfolio-accent" style={{
+                  animationDelay: '0.4s'
+                }}>Developer</span>
+                  <span className="inline-block animate-fade-in" style={{
+                  animationDelay: '0.6s'
+                }}>&amp; Programmer</span>
                 </div>
               </div>
               
@@ -89,16 +100,13 @@ const Hero = () => {
             
             {/* Enhanced social links with better hover effects */}
             <div className="flex gap-4 pt-4">
-              <a href="https://github.com/Umesh624" target="_blank" rel="noopener noreferrer" 
-                 className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
+              <a href="https://github.com/Umesh624" target="_blank" rel="noopener noreferrer" className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
                 <Github className="w-6 h-6 theme-text group-hover:text-portfolio-accent transition-colors" />
               </a>
-              <a href="https://linkedin.com/in/yangala-umesh-146aa1264" target="_blank" rel="noopener noreferrer"
-                 className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
+              <a href="https://linkedin.com/in/yangala-umesh-146aa1264" target="_blank" rel="noopener noreferrer" className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
                 <Linkedin className="w-6 h-6 theme-text group-hover:text-portfolio-accent transition-colors" />
               </a>
-              <a href="mailto:yangalaumesh@gmail.com"
-                 className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
+              <a href="mailto:yangalaumesh@gmail.com" className="group p-4 glass-effect hover:glass-effect-strong rounded-xl transition-all duration-300 hover:scale-110 hover:rotate-3">
                 <Mail className="w-6 h-6 theme-text group-hover:text-portfolio-accent transition-colors" />
               </a>
             </div>
@@ -112,11 +120,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-portfolio-accent via-purple-500 to-portfolio-secondary rounded-3xl animate-glow"></div>
                 <div className="absolute inset-1 bg-gradient-to-tr from-portfolio-secondary via-pink-500 to-portfolio-success rounded-3xl opacity-50 animate-pulse"></div>
                 <div className="absolute inset-3 bg-background rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://i.postimg.cc/fTQjcgnq/1741712003140.jpg" 
-                    alt="Yangala Umesh" 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
+                  <img src="https://i.postimg.cc/fTQjcgnq/1741712003140.jpg" alt="Yangala Umesh" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-portfolio-accent/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -125,13 +129,17 @@ const Hero = () => {
                 <div className="absolute -top-6 -right-6 w-16 h-16 glass-effect-strong rounded-2xl flex items-center justify-center animate-bounce-gentle hover:animate-pulse cursor-pointer">
                   <span className="text-3xl">⚡</span>
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-16 h-16 glass-effect-strong rounded-2xl flex items-center justify-center animate-bounce-gentle hover:animate-pulse cursor-pointer" style={{ animationDelay: '1s' }}>
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 glass-effect-strong rounded-2xl flex items-center justify-center animate-bounce-gentle hover:animate-pulse cursor-pointer" style={{
+                animationDelay: '1s'
+              }}>
                   <span className="text-3xl">💻</span>
                 </div>
                 <div className="absolute top-4 -left-8 w-12 h-12 glass-effect rounded-full flex items-center justify-center animate-float">
                   <span className="text-2xl">🎨</span>
                 </div>
-                <div className="absolute bottom-4 -right-8 w-12 h-12 glass-effect rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '2s' }}>
+                <div className="absolute bottom-4 -right-8 w-12 h-12 glass-effect rounded-full flex items-center justify-center animate-float" style={{
+                animationDelay: '2s'
+              }}>
                   <span className="text-2xl">🚀</span>
                 </div>
               </div>
@@ -149,8 +157,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
