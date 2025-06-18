@@ -104,7 +104,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Enhanced Right column - Profile image with modern styling */}
+          {/* Enhanced Right column - Profile image with modern square styling */}
           <div className="flex justify-center lg:justify-end animate-fade-in-right">
             <div className="relative">
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
@@ -113,7 +113,7 @@ const Hero = () => {
                 <div className="absolute inset-1 bg-gradient-to-tr from-portfolio-secondary via-pink-500 to-portfolio-success rounded-3xl opacity-50 animate-pulse"></div>
                 <div className="absolute inset-3 bg-background rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                    src="https://i.postimg.cc/fTQjcgnq/1741712003140.jpg" 
                     alt="Yangala Umesh" 
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
