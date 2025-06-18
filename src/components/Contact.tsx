@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,13 +13,38 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent successfully! I\'ll get back to you soon.', {
-      description: 'Thank you for reaching out!',
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_jbl5b0p', // Service ID
+        'template_pptgame', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Yangala Umesh',
+        },
+        'TFhjwezK8RTsn0IjN' // Public Key
+      );
+
+      toast.success('Message sent successfully! I\'ll get back to you soon.', {
+        description: 'Thank you for reaching out!',
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast.error('Failed to send message. Please try again.', {
+        description: 'There was an error sending your message.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -157,6 +183,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-white/5 border-white/10 text-white placeholder:text-portfolio-text/50 focus:border-portfolio-accent h-12 rounded-xl"
                   />
                 </div>
@@ -170,6 +197,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-white/5 border-white/10 text-white placeholder:text-portfolio-text/50 focus:border-portfolio-accent h-12 rounded-xl"
                   />
                 </div>
@@ -182,6 +210,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={6}
                     className="bg-white/5 border-white/10 text-white placeholder:text-portfolio-text/50 focus:border-portfolio-accent rounded-xl resize-none"
                   />
@@ -189,10 +218,11 @@ const Contact = () => {
                 
                 <Button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full btn-primary h-12 text-lg"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
