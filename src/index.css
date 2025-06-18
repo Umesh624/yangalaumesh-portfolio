@@ -1,10 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Portfolio theme colors */
-
 @layer base {
   :root {
     --background: 10 10 10; /* #0A0A0A */
@@ -46,6 +44,45 @@
     --sidebar-border: 45 45 45;
     --sidebar-ring: 99 102 241;
   }
+
+  .light {
+    --background: 255 255 255; /* #FFFFFF */
+    --foreground: 31 41 55; /* #1F2937 */
+
+    --card: 255 255 255;
+    --card-foreground: 31 41 55;
+
+    --popover: 255 255 255;
+    --popover-foreground: 31 41 55;
+
+    --primary: 99 102 241; /* #6366F1 */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 243 244 246;
+    --secondary-foreground: 31 41 55;
+
+    --muted: 243 244 246;
+    --muted-foreground: 107 114 128;
+
+    --accent: 99 102 241; /* #6366F1 */
+    --accent-foreground: 255 255 255;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 99 102 241;
+
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 31 41 55;
+    --sidebar-primary: 99 102 241;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 243 244 246;
+    --sidebar-accent-foreground: 31 41 55;
+    --sidebar-border: 229 231 235;
+    --sidebar-ring: 99 102 241;
+  }
 }
 
 @layer base {
@@ -54,11 +91,18 @@
   }
 
   body {
-    @apply bg-portfolio-dark text-portfolio-text font-inter;
+    @apply bg-background text-foreground font-inter transition-colors duration-300;
     background-image: 
       radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  }
+
+  .light body {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
   }
 
   html {
@@ -78,9 +122,17 @@
   .glass-effect {
     @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] shadow-2xl;
   }
+
+  .light .glass-effect {
+    @apply bg-black/[0.02] backdrop-blur-xl border border-black/[0.05] shadow-2xl;
+  }
   
   .glass-effect-strong {
     @apply bg-white/[0.05] backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .light .glass-effect-strong {
+    @apply bg-black/[0.05] backdrop-blur-xl border border-black/10 shadow-2xl;
   }
   
   .glow-effect {
@@ -105,6 +157,23 @@
 
   .container-custom {
     @apply container mx-auto px-6 lg:px-8;
+  }
+
+  /* Theme-specific text colors */
+  .theme-text {
+    @apply text-portfolio-text;
+  }
+
+  .light .theme-text {
+    @apply text-portfolio-text-dark;
+  }
+
+  .theme-text-muted {
+    @apply text-portfolio-text/80;
+  }
+
+  .light .theme-text-muted {
+    @apply text-portfolio-text-dark/80;
   }
 }
 

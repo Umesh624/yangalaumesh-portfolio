@@ -45,7 +45,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       isScrolled ? 'glass-effect py-4' : 'py-6'
     }`}>
       <div className="container mx-auto px-6">
@@ -59,8 +59,8 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-portfolio-accent ${
-                  activeSection === item.id ? 'text-portfolio-accent' : 'text-portfolio-text'
+                className={`text-sm font-medium transition-all duration-300 hover:text-portfolio-accent hover:scale-105 ${
+                  activeSection === item.id ? 'text-portfolio-accent scale-105' : 'theme-text'
                 }`}
               >
                 {item.label}
