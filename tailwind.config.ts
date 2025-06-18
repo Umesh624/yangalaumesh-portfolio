@@ -66,9 +66,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'portfolio-dark': '#121212',
-				'portfolio-accent': '#00ADB5',
-				'portfolio-text': '#CCCCCC',
+				'portfolio-dark': '#0A0A0A',
+				'portfolio-light': '#F8F9FA',
+				'portfolio-accent': '#6366F1',
+				'portfolio-secondary': '#F59E0B',
+				'portfolio-success': '#10B981',
+				'portfolio-text': '#E5E7EB',
+				'portfolio-text-dark': '#374151',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -102,6 +106,26 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
+				'fade-in-left': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'fade-in-right': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
 				'float': {
 					'0%, 100%': {
 						transform: 'translateY(0px)'
@@ -110,12 +134,28 @@ export default {
 						transform: 'translateY(-20px)'
 					}
 				},
-				'glow': {
+				'pulse-slow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(0, 173, 181, 0.5)'
+						opacity: '1'
 					},
 					'50%': {
-						boxShadow: '0 0 30px rgba(0, 173, 181, 0.8)'
+						opacity: '0.8'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px rgba(99, 102, 241, 0.8)'
+					}
+				},
+				'bounce-gentle': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
 					}
 				}
 			},
@@ -123,8 +163,16 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
+				'fade-in-left': 'fade-in-left 0.6s ease-out',
+				'fade-in-right': 'fade-in-right 0.6s ease-out',
 				'float': 'float 6s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			}
 		}
 	},
