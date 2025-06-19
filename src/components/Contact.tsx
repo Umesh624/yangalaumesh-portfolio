@@ -22,7 +22,7 @@ const Contact = () => {
     try {
       // Send email using EmailJS
       await emailjs.send(
-        'service_jbl5b0p', // Service ID
+        'service_ic4j0re', // Service ID
         'template_pptgame', // Template ID
         {
           from_name: formData.name,
