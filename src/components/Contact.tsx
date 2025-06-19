@@ -20,9 +20,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Attempting to send email with EmailJS...');
       // Send email using EmailJS
       await emailjs.send(
-        'service_ic4j0re', // Service ID
+        'service_jbl5b0p', // Service ID - using the one that appears in network requests
         'template_pptgame', // Template ID
         {
           from_name: formData.name,
@@ -33,6 +34,7 @@ const Contact = () => {
         'TFhjwezK8RTsn0IjN' // Public Key
       );
 
+      console.log('Email sent successfully!');
       toast.success('Message sent successfully! I\'ll get back to you soon.', {
         description: 'Thank you for reaching out!',
       });
