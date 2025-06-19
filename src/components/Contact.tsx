@@ -23,7 +23,7 @@ const Contact = () => {
       console.log('Attempting to send email with EmailJS...');
       // Send email using EmailJS
       await emailjs.send(
-        'service_jbl5b0p', // Service ID - using the one that appears in network requests
+        'service_ic4j0re', // Service ID - updated with correct ID
         'template_pptgame', // Template ID
         {
           from_name: formData.name,
